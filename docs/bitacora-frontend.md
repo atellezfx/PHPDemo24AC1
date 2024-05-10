@@ -48,7 +48,7 @@
 	  font-family: 'Sora', Arial, Helvetica, sans-serif;
 	}
     ```
-8. Para levantar el seridor de Angular para desarrollo, ejecutar el siguiente comando desde la carpeta `empleados` del proyecto
+8. Para levantar el seridor de Angular para desarrollo, ejecutar el siguiente comando desde la carpeta `dogtorpet` del proyecto
 
     ```bash
     $ ng serve
@@ -111,20 +111,27 @@
 
     ```bash
     $ ng g interface models/tipo
+
+10. Ejecutar el siguiente comando para crear el modelo de Tipo
+
+    ```bash
+    $ ng g interface models/propietario
     ```
 
-10. Ejecutar el siguiente comando para crear el servicio de Mascota
+11. Ejecutar el siguiente comando para crear los servicios en Angular
 
     ```bash
     $ ng g service services/mascota --skip-tests
+    $ ng g service services/tipo --skip-tests
+    $ ng g service services/propietario --skip-tests
     ```
 
-11. Ejecutar el siguiente comando para crear el servicio de Login
+12. Ejecutar el siguiente comando para crear el servicio de Login
 
     ```bash
     $ ng g service services/login --skip-tests
     ```
-12. Agregar las rutas de cada componente en el archivo `app.routes.ts`, el cual debe quedar similar a lo siguiente,
+13. Agregar las rutas de cada componente en el archivo `app.routes.ts`, el cual debe quedar similar a lo siguiente,
 
     ```typescript
     import { Routes } from '@angular/router';
@@ -143,7 +150,7 @@
         { path: 'eliminar/:id', component: EliminarComponent }
     ];
     ```
-16. Ejecutar el siguiente comando para crear el filtro de seguridad (guardas)
+14. Ejecutar el siguiente comando para crear el filtro de seguridad (guardas)
 
     ```bash
     $ ng g guard util/login --skip-tests
@@ -155,7 +162,7 @@
      ( ) CanDeactivate
      ( ) CanMatch
     ```
-17. Modifica las rutas dentro el archivo `app.routes.ts`, el cual debe quedar similar a lo siguiente,
+15. Modifica las rutas dentro el archivo `app.routes.ts`, el cual debe quedar similar a lo siguiente,
 
     ```typescript
     //...
@@ -172,13 +179,13 @@
 
     //...
     ```
-18. Ejecutar el siguiente comando para crear el interceptor http para el JWT
+16. Ejecutar el siguiente comando para crear el interceptor http para el JWT
 
     ```bash
     $ ng g interceptor util/auth --skip-tests
     ```
 
-19. Modificar el archivo app.config.ts, deberá quedar de la siguiente manera:
+17. Modificar el archivo app.config.ts, deberá quedar de la siguiente manera:
 
     ```typescript
     import { ApplicationConfig } from '@angular/core';
