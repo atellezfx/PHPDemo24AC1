@@ -6,6 +6,7 @@ import { EditarComponent } from './components/editar/editar.component';
 import { EliminarComponent } from './components/eliminar/eliminar.component';
 import { LoginComponent } from './components/login/login.component';
 import { MascotaComponent } from './components/mascota/mascota.component';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +16,13 @@ import { MascotaComponent } from './components/mascota/mascota.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'dogtorpet';
+
+  title = 'DogtorPET';
+
+  constructor( public authSvc:AuthService ) { }
+
+  public cerrarSesion(): void {
+    // TODO: Implementar lógica de cerrar sesión del usuario
+  }
+
 }
