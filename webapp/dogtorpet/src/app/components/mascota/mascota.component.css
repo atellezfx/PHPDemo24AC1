@@ -7,3 +7,12 @@ img {
 .card-text {
   font-size: small;
 }
+
+.icn-button {
+  cursor: pointer;
+  color: lightgray;
+}
+
+.icn-button:hover {
+  color:#0d6efd;
+}
