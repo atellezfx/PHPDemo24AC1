@@ -4,6 +4,10 @@ img {
   object-fit: cover;
 }
 
+.card {
+  cursor: pointer;
+}
+
 .card-text {
   font-size: small;
 }

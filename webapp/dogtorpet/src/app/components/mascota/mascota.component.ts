@@ -23,4 +23,8 @@ export class MascotaComponent {
     // TODO: Implementar el proceso de eliminar registro de mascota
   }
 
+  public editar():void {
+    // TODO: Implementar la carga del panel de edición de mascotas
+  }
+
 }
