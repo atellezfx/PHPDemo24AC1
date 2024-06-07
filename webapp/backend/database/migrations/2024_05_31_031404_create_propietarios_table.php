@@ -9,10 +9,12 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
+    public function up(): void {
         Schema::create('propietarios', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
+            $table->string('email')->unique(true)->nullable(false);
+            $table->string('nombre')->nullable(false);
+            $table->string('apellidos')->nullable(false);
             $table->timestamps();
         });
     }
