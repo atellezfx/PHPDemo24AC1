@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Tipo } from '../models/tipo';
-import { tiposPrueba } from '../util/datos-prueba';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { environment as env } from '../../environment/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TipoService {
 
-  // TODO: Implementar la URL del servidor (backend)
+  private readonly servidor = `${env.urlServidor}/v1/tipos`;
 
-  constructor() { }
+  constructor( private http:HttpClient ) { }
 
   public obtener(id:number): Observable<Tipo> {
-    const resultado = tiposPrueba.filter( tipo => tipo.id == id );
-    return of( resultado[0] );
+    // ej. http://localhost:8000/api/v1/tipos/1
+    return this.http.get<Tipo>(`${this.servidor}/${id}`);
   }
 
   public lista(): Observable<Tipo[]> {
-    return of( tiposPrueba );
+    return this.http.get<Tipo[]>(this.servidor);
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { AgregarComponent } from './components/agregar/agregar.component';
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { EditarComponent } from './components/editar/editar.component';
@@ -11,7 +11,7 @@ import { AuthService } from './services/auth.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AgregarComponent, CatalogoComponent, EditarComponent, EliminarComponent, LoginComponent, MascotaComponent],
+  imports: [RouterModule, RouterOutlet, AgregarComponent, CatalogoComponent, EditarComponent, EliminarComponent, LoginComponent, MascotaComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -22,7 +22,7 @@ export class AppComponent {
   constructor( public authSvc:AuthService ) { }
 
   public cerrarSesion(): void {
-    // TODO: Implementar lógica de cerrar sesión del usuario
+    this.authSvc.logout();
   }
 
 }
