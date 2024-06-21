@@ -19,11 +19,12 @@ export class MascotaService {
   }
 
   public lista(propietario:number): Observable<Mascota[]> {
-    return this.http.get<Mascota[]>(this.servidor);
+    return this.http.get<Mascota[]>(`${this.servidor}/catalogo/${propietario}`);
   }
 
   public insertar(m:Mascota): Observable<Mascota> {
     console.log(`Insertando registro de ${m.nombre}`);
+    console.log(JSON.stringify(m) );
     return this.http.post<Mascota>(this.servidor, m);
   }
 

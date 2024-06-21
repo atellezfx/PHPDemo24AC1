@@ -1,5 +1,5 @@
 export interface Mascota {
-  id:number,
+  id?:number,
   nombre:string,
   propietario:number,
   fechaNac:Date,
@@ -7,5 +7,5 @@ export interface Mascota {
   color:string,
   genero:'macho'|'hembra',
   tipo:number,
-  fotoUrl:string
+  fotoUrl?:string
 }

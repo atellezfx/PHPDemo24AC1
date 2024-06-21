@@ -57,7 +57,12 @@ export class CatalogoComponent implements OnInit {
 		);
 
   public eliminar( mascota:Mascota|null ): void {
-    // TODO: Implememtar lógica de eliminar un registro de mascotas
+    if( mascota ) {
+      const indice = this.mascotas.indexOf(mascota);
+      this.mascotaSvc.eliminar(mascota).subscribe(
+        datos => this.mascotas.splice(indice, 1)
+      );
+    }
   }
 
 
